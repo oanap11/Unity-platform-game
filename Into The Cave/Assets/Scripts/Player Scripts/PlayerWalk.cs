@@ -11,14 +11,23 @@ public class PlayerWalk : MonoBehaviour
 
     private Vector3 tempPos;
 
+    private PlayerAnimation playerAnim;
+
     private void Awake()
     {
         myBody = GetComponent<Rigidbody2D>();
+        playerAnim = GetComponent<PlayerAnimation>();
     }
 
     private void Update()
     {
-        HandleMovementWithTransform();
+        //HandleMovementWithTransform();
+        HandlePlayerAnimations();
+    }
+
+    private void FixedUpdate()
+    {
+        HandleMovementWithRigidBody();
     }
 
     //moving the player from left to right
@@ -60,6 +69,14 @@ public class PlayerWalk : MonoBehaviour
         else
             myBody.velocity = new Vector2(0f, myBody.velocity.y);
         
+    }
+
+    void HandlePlayerAnimations()
+    {
+
+        playerAnim.Play_WalkAnimation((int)Mathf.Abs(myBody.velocity.x)); //using the absolute value because velocity can be negative
+        
+        playerAnim.SetFacingDirection((int)myBody.velocity.x);
 
     }
 
