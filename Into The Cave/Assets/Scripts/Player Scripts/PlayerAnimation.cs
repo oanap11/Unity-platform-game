@@ -28,9 +28,9 @@ public class PlayerAnimation : MonoBehaviour
     {
 
         if (facingDir > 0)
-            spriteRenderer.flipX = false;
+            spriteRenderer.flipX = false; //going to the right
         else if (facingDir < 0)
-            spriteRenderer.flipX = true;
+            spriteRenderer.flipX = true; //going to the left
 
     }
 

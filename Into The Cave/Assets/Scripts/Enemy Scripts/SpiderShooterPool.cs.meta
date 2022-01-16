@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 41199fcf44124fc52adda903259098bd
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - spiderBullet: {fileID: 5399867262999209888, guid: ad26b96c1cd93be1ba3e2a81112c33d4, type: 3}
+  - bulletSpawnPos: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
