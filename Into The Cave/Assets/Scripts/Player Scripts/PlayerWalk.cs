@@ -13,16 +13,26 @@ public class PlayerWalk : MonoBehaviour
 
     private PlayerAnimation playerAnim;
 
+    [SerializeField]
+    private LayerMask groundLayer;
+
+    [SerializeField]
+    private Transform groundCheckPos;
+
+    private BoxCollider2D boxCol2D;
+
     private void Awake()
     {
         myBody = GetComponent<Rigidbody2D>();
         playerAnim = GetComponent<PlayerAnimation>();
+        boxCol2D = GetComponent<BoxCollider2D>();
     }
 
     private void Update()
     {
         //HandleMovementWithTransform();
         HandlePlayerAnimations();
+        HandleJumping();
     }
 
     private void FixedUpdate()
@@ -50,7 +60,7 @@ public class PlayerWalk : MonoBehaviour
 
     }
 
-    //moving the player while applying velocity with the RigidBody
+    //moving the player while adding velocity with the RigidBody
     void HandleMovementWithRigidBody()
     {
 
@@ -78,6 +88,29 @@ public class PlayerWalk : MonoBehaviour
         
         playerAnim.SetFacingDirection((int)myBody.velocity.x);
 
+        playerAnim.Play_JumpAnimation(!IsGrounded()); //the animation plays when the player is not on the ground
+
+    }
+
+    //checking if the player is on the ground
+    bool IsGrounded()
+    {
+        //casting a box from the center of the game object
+        // size, angle, direction(down), box length, checking for collisions
+        return Physics2D.BoxCast(boxCol2D.bounds.center, boxCol2D.bounds.size, 0f, Vector2.down, 0.1f, groundLayer);
+
+    }
+
+    void HandleJumping()
+    {
+
+        if (Input.GetButtonDown(TagManager.JUMP_BUTTON))
+        {
+            if (IsGrounded())
+            {
+                myBody.velocity = new Vector2(myBody.velocity.x, jumpForce);
+            }
+        }
     }
 
 } //end
