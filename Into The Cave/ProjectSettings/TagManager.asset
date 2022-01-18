@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Goal
   layers:
   - Default
   - TransparentFX
@@ -44,6 +45,9 @@ TagManager:
     locked: 0
   - name: Enemy
     uniqueID: 1746906717
+    locked: 0
+  - name: Collectables
+    uniqueID: 2267158187
     locked: 0
   - name: Player
     uniqueID: 1666716243
