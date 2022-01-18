@@ -330,10 +330,15 @@
 /define:UNITY_STANDALONE_LINUX_API
 /define:UNITY_TEAM_LICENSE
 /define:USE_SEARCH_ENGINE_API
+"Assets/Follow.cs"
 "Assets/Scripts/Enemy Scripts/DeactivateObject.cs"
+"Assets/Scripts/Enemy Scripts/SpiderJumper.cs"
 "Assets/Scripts/Enemy Scripts/SpiderShooter.cs"
 "Assets/Scripts/Enemy Scripts/SpiderShooterPool.cs"
 "Assets/Scripts/Enemy Scripts/SpiderWalker.cs"
+"Assets/Scripts/Gameplay Scripts/CameraFollow.cs"
 "Assets/Scripts/Helper Scripts/TagManager.cs"
+"Assets/Scripts/Obstacle Scripts/HangingSpike.cs"
+"Assets/Scripts/Obstacle Scripts/Saw.cs"
 "Assets/Scripts/Player Scripts/PlayerAnimation.cs"
 "Assets/Scripts/Player Scripts/PlayerWalk.cs"
