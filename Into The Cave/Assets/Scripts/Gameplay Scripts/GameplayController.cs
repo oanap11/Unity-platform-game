@@ -83,5 +83,22 @@ public class GameplayController : MonoBehaviour
 
     }
 
+    public void IncreaseAir(float air)
+    {
+        airValue += air;
+
+        if (airValue > airMax)
+            airValue = airMax;
+
+    }
+
+    public void IncreaseTime(float time)
+    {
+        timeValue += time;
+
+        if (timeValue > timeMax)
+            timeValue = timeMax;
+    }
+
     
 }
