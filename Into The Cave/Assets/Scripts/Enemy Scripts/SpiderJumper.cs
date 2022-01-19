@@ -51,6 +51,7 @@ public class SpiderJumper : MonoBehaviour
     {
         if (canJump)
         {
+            SoundController.instance.Play_SpiderAttackSound();
             canJump = false;
             myBody.velocity = new Vector2(0f, Random.Range(minJumpForce, maxJumpForce));
         }

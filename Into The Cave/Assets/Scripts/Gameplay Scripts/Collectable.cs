@@ -15,7 +15,8 @@ public class Collectable : MonoBehaviour
 
         if (collision.CompareTag(TagManager.PLAYER_TAG))
         {
-
+            SoundController.instance.Play_CollectableSound();
+            
             if (timeCollectable)
             {
                 GameplayController.instance.IncreaseTime(collectableValue);
